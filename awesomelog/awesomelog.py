@@ -15,6 +15,8 @@ import logging
 import logging.config
 import yaml
 
+__version__ = '1.0.0'
+
 awesome_logging_config = \
     """
     version: 1
@@ -22,7 +24,7 @@ awesome_logging_config = \
 
     formatters:
         console:
-            format : "[%(levelname)-7s] %(message)s"
+            format : "[%(levelname)-7s] %(message)s (%(name)s)"
             datefmt: "%H:%M:%S"
 
         file:
@@ -91,6 +93,3 @@ try:
     logging.config.dictConfig(config)
 except Exception:
     raise ValueError("Couldn't import logging settings from yaml")
-
-logger = logging.getLogger(__name__)
-logger.info('teste')
