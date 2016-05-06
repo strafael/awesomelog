@@ -4,12 +4,6 @@
 Bootstrap for console and file logging configuration.
 """
 
-try:
-    import colorlog
-    _colorlog_available = True
-except ImportError:
-    _colorlog_available = False
-
 import os
 import logging
 import logging.config
