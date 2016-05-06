@@ -23,7 +23,7 @@ def find_version(*file_paths):
         return version_match.group(1)
     raise RuntimeError("Unable to find version string.")
 
-required = ['colorlog']
+required = ['colorlog', 'pyyaml']
 if platform.system() == 'Windows':
     required.extend(['colorama'])
 
