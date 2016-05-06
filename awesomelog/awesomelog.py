@@ -9,7 +9,7 @@ import logging
 import logging.config
 import yaml
 
-__version__ = '1.3.1'
+__version__ = '1.4.0'
 
 awesome_logging_config = \
     """
