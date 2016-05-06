@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/rtogo/awesomelog/tree/master/doc/example1.png"><br>
+  <img src="https://github.com/rtogo/awesomelog/blob/master/doc/example1.png"><br>
 </div>
 
 -----------------
