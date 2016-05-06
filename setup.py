@@ -23,9 +23,19 @@ def find_version(*file_paths):
         return version_match.group(1)
     raise RuntimeError("Unable to find version string.")
 
+
+try:
+    import pypandoc
+    md2rst = lambda f: pypandoc.convert(f, 'rst')
+except ImportError:
+    print("warning: pypandoc module not found, could not "
+          "convert Markdown to RST")
+    md2rst = lambda f: read(f)
+
 required = ['colorlog', 'pyyaml']
 if platform.system() == 'Windows':
     required.extend(['colorama'])
+
 
 setup(
     name='awesomelog',
@@ -33,7 +43,7 @@ setup(
     version=find_version('awesomelog', 'awesomelog.py'),
     description='Bootstrap for console and file logging configuration',
     install_requires=required,
-    long_description=read('README.md'),
+    long_description=md2rst('README.md'),
     author='Rafael Santos',
     author_email='rstogo@outlook.com',
     url='https://github.com/rtogo/awesomelog',
